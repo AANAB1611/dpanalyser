@@ -7,10 +7,14 @@ import {
   Tooltip,
 } from "recharts";
 
-import { formatPercentage } from "@/lib/utils";
-import { CategoryTooltip } from "./category-tootip";
-
-const COLORS = ["#0062FF", "#12c6ff", "#ff647f", "#ff9354"];
+const COLORS = [
+  "#0062FF",
+  "#12c6ff",
+  "#ff647f",
+  "#ff9354",
+  "#22c55e",
+  "#f59e0b",
+];
 
 const PieVariant = ({ data }) => {
   return (
@@ -41,11 +45,9 @@ const PieVariant = ({ data }) => {
                         {entry.value}
                       </span>
                       <span className="text-sm">
-                        {formatPercentage(
-                          entry.payload?.percent
-                            ? entry.payload?.percent * 100
-                            : 0
-                        )}
+                        {entry.payload?.percent
+                          ? (entry.payload?.percent * 100).toFixed(2) + "%"
+                          : "0%"}
                       </span>
                     </div>
                   </li>
@@ -54,7 +56,7 @@ const PieVariant = ({ data }) => {
             );
           }}
         />
-        <Tooltip content={<CategoryTooltip />} />
+        <Tooltip />
         <Pie
           data={data}
           cx="50%"
