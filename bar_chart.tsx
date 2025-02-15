@@ -24,8 +24,12 @@ const BarVariant = ({ data }) => {
           tickMargin={16}
         />
         <Tooltip content={<CustomTooltip />} />
-        <Bar dataKey="income" fill="#3b82f6" className="drop-shadow-sm" />
-        <Bar dataKey="expenses" fill="#f43f5e" className="drop-shadow-sm" />
+        <Bar dataKey="commits" fill="#3b82f6" className="drop-shadow-sm" />
+        <Bar dataKey="merges" fill="#f43f5e" className="drop-shadow-sm" />
+        <Bar dataKey="repoEngagement" fill="#10b981" className="drop-shadow-sm" />
+        <Bar dataKey="requestedChanges" fill="#f59e0b" className="drop-shadow-sm" />
+        <Bar dataKey="bugsFixed" fill="#8b5cf6" className="drop-shadow-sm" />
+        <Bar dataKey="issuesSolved" fill="#ec4899" className="drop-shadow-sm" />
       </BarChart>
     </ResponsiveContainer>
   );
